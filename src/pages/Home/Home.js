@@ -29,6 +29,15 @@ const Home = () => {
     renderTrendMovies();
   }, []);
 
+  // this function is just for GitHub deployment-----------
+  const changeTrendMovies = () => {
+    setTrendMovies([]);
+  };
+  changeTrendMovies();
+  console.log(isLoading);
+  console.log(error);
+  // function above is just for GitHub deployment-----------
+
   return (
     <main>
       <h2>Trending today</h2>
