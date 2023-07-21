@@ -29,14 +29,14 @@ const Home = () => {
     renderTrendMovies();
   }, []);
 
-  // this function is just for GitHub deployment-----------
+  // this code is just for GitHub deployment-----------
   const changeTrendMovies = () => {
     setTrendMovies([]);
   };
-  changeTrendMovies();
+  console.log(changeTrendMovies);
   console.log(isLoading);
   console.log(error);
-  // function above is just for GitHub deployment-----------
+  // code above is just for GitHub deployment-----------
 
   return (
     <main>
