@@ -1,0 +1,9 @@
+.glyphicons {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.img {
+  background-image: '../../icons/glyphicons.svg';
+}

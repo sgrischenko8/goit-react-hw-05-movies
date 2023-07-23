@@ -1,0 +1,13 @@
+.input {
+  margin-left: 0.5em;
+  border: 0.1em solid rgb(128, 128, 128, 0.1);
+  border-top: 0.1em solid rgb(128, 128, 128, 0.5);
+  height: 2em;
+  width: 300px;
+}
+
+.input:focus {
+  outline: none;
+  border-radius: 8px;
+  border: 0.25em solid rgba(11, 63, 235, 0.4);
+}

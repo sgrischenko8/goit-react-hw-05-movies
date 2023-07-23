@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import TrendingList from '../../components/TrendingList/TrendingList';
+import Loader from 'components/Loader/Loader';
 import * as API from '../../services/api';
+import styles from './Home.module.css';
 
 const Home = () => {
   const [trendMovies, setTrendMovies] = useState([]);
@@ -13,12 +15,11 @@ const Home = () => {
 
       try {
         const data = await API.fetchMovies();
-        console.log(data);
-        // const movies = data.map(el => ({
-        //   id: el.id,
-        //   title: el.title,
-        // }));
-        // setTrendMovies(movies);
+        const movies = data.map(el => ({
+          id: el.id,
+          title: el.title || el.name || el.original_title,
+        }));
+        setTrendMovies(movies);
       } catch (e) {
         console.log(e);
         setError('Something goes bad... Please, try later');
@@ -29,20 +30,16 @@ const Home = () => {
     renderTrendMovies();
   }, []);
 
-  // this code is just for GitHub deployment-----------
-  const changeTrendMovies = () => {
-    setTrendMovies([]);
-  };
-  console.log(changeTrendMovies);
-  console.log(isLoading);
-  console.log(error);
-  // code above is just for GitHub deployment-----------
-
   return (
-    <main>
-      <h2>Trending today</h2>
-      <TrendingList trendMovies={trendMovies} />
-    </main>
+    <>
+      <h2 className={styles.title}>Trending today</h2>
+      {isLoading && <Loader />}
+      {error ? (
+        <p>{error}</p>
+      ) : (
+        <TrendingList trendMovies={trendMovies} setLoading={setLoading} />
+      )}
+    </>
   );
 };
 
