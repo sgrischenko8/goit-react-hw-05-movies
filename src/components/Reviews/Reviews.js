@@ -30,25 +30,29 @@ const Reviews = () => {
       }
     }
     renderReviews();
-  }, []);
+  }, [movieId]);
 
   return (
     <>
-      <section>
-        {isLoading && <Loader />}
-        {reviews.length > 0 ? (
-          <ul>
-            {reviews.map(el => (
-              <li key={el.id}>
-                <p>{el.author}:</p>
-                <p>{el.content}:</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>We don't have any reviews for that movie</p>
-        )}
-      </section>
+      {error ? (
+        <p>{error}</p>
+      ) : (
+        <section>
+          {isLoading && <Loader />}
+          {reviews.length > 0 ? (
+            <ul>
+              {reviews.map(el => (
+                <li key={el.id}>
+                  <p>{el.author}:</p>
+                  <p>{el.content}:</p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>We don't have any reviews for that movie</p>
+          )}
+        </section>
+      )}
     </>
   );
 };

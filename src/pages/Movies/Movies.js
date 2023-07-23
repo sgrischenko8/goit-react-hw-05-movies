@@ -23,7 +23,7 @@ const Movies = () => {
     }
 
     renderSearchedMovies(search);
-  }, []);
+  }, [search]);
 
   const handleSubmit = event => {
     setSearchedMovies([]);

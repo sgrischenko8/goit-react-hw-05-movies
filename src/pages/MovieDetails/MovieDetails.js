@@ -37,7 +37,7 @@ const MovieDetails = () => {
       }
     }
     renderMovieDetails();
-  }, []);
+  }, [movieId]);
 
   const { poster, title, year, score, genres, descr } = movieDetails;
 
