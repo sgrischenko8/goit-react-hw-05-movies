@@ -30,6 +30,10 @@ a:visited {
   color: blue;
 }
 
+header a {
+  color: black;
+}
+
 header a:visited {
   color: black;
 }
