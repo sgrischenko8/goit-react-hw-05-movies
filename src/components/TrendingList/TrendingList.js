@@ -1,7 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const TrendingList = ({ trendMovies }) => {
   const location = useLocation();
+
   return (
     <ul>
       {trendMovies.map(movie => (
@@ -13,6 +15,15 @@ const TrendingList = ({ trendMovies }) => {
       ))}
     </ul>
   );
+};
+
+TrendingList.propTypes = {
+  trendMovies: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default TrendingList;
