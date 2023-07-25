@@ -1,0 +1,23 @@
+.main_info {
+  margin-left: 0.5em;
+  display: flex;
+  gap: 1em;
+}
+
+.list {
+  padding: 0;
+  display: flex;
+  gap: 0.5em;
+  list-style: none;
+}
+
+.poster {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background-image: '../../icons/picture.svg';
+}
+
+.no_data {
+  color: red;
+}

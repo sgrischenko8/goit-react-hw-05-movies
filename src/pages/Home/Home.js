@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import TrendingList from '../../components/TrendingList/TrendingList';
+import MoviesList from '../../components/MoviesList/MoviesList';
 import Loader from 'components/Loader/Loader';
 import * as API from '../../services/api';
 import styles from './Home.module.css';
@@ -34,11 +34,7 @@ const Home = () => {
     <>
       <h2 className={styles.title}>Trending today</h2>
       {isLoading && <Loader />}
-      {error ? (
-        <p>{error}</p>
-      ) : (
-        <TrendingList trendMovies={trendMovies} setLoading={setLoading} />
-      )}
+      {error ? <p>{error}</p> : <MoviesList movies={trendMovies} />}
     </>
   );
 };

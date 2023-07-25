@@ -58,7 +58,7 @@ const Movies = () => {
         <button type="submit">Search</button>
       </form>
       {isLoading && <Loader />}
-      {error ? <p>{error}</p> : <MoviesList searchedMovies={searchedMovies} />}
+      {error ? <p>{error}</p> : <MoviesList movies={searchedMovies} />}
     </>
   );
 };
